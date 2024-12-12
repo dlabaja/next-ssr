@@ -1,3 +1,60 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+  "globals": {
+    "React": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off",
+        "storybook/context-in-play-function": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module"
+  },
+  "root": true,
+  "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    // # default rules
+    "indent": ["error", 4, { "SwitchCase": 1, "ignoredNodes": ["PropertyDefinition"] }],
+    "linebreak-style": "off",
+    "quotes": ["error", "double"],
+    "no-irregular-whitespace": [0, {"skipTemplates": true }],
+    "semi": "off", // enable after use of prettier
+    // # rules that ovrride eslint:recommended
+    // ## temporary change
+    "no-extra-boolean-cast": "warn",
+    "prefer-const": "warn",
+    "no-empty-function": "off",
+    "no-async-promise-executor": "warn",
+    // ## change
+    "no-case-declarations": "off",
+    "no-undef": "off",
+    // ## added (will be enabled in later iterations)
+    // "no-useless-constructor": "warn",
+    // "no-var": "warn"
+    // "no-tabs": "error",
+    // "no-trailing-spaces": "error",
+    // # rules that ovrride @typescript-eslint/recommended
+    // ## temporary change
+    "@typescript-eslint/no-empty-interface": ["warn", { "allowSingleExtends": true }],
+    "@typescript-eslint/no-empty-function": "warn",
+    // ## change
+    "@typescript-eslint/no-unused-vars": ["warn", { "destructuredArrayIgnorePattern": "^_" }],
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
 }
