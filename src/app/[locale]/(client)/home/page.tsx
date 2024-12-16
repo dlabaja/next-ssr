@@ -3,9 +3,7 @@
 import styles from "./page.module.css";
 import {useTranslation} from "react-i18next";
 
-// @ts-ignore
-// eslint-disable-next-line react/prop-types
-export default function Home({ params: { locale } }) {
+export default function Home() {
     const { t } = useTranslation();
 
     return (
