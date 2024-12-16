@@ -10,7 +10,7 @@ import { createInstance } from "i18next";
 export const TranslationsProvider = (x) => {
     const i18n = createInstance();
 
-    initTranslations(x.locale, x.namespaces, i18n, x.resources);
+    initTranslations(x.locale, i18n, x.resources);
 
     return <I18nextProvider i18n={i18n}>{x.children}</I18nextProvider>;
 }
