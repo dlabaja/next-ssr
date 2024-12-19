@@ -1,14 +1,18 @@
+import {initReactI18next} from "react-i18next/initReactI18next";
+import Backend from "i18next-http-backend";
+import resourcesToBackend from "i18next-resources-to-backend";
+import i18nConfig from "@/i18nConfig";
 import {Translator} from "@/data/translator";
 
 export default async function initTranslations(
     locale: string,
     // eslint-disable-next-line
-    i18n: any
+    i18next: any
 ) {
-    const instance = await new Translator().init(locale, i18n)
+    await new Translator().init(locale, i18next)
 
     return {
-        i18n: instance,
-        t: instance.t
+        i18n: i18next,
+        t: i18next.t
     };
 }
