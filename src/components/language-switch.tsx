@@ -11,8 +11,8 @@ export default function LanguageChanger() {
     const router = useRouter();
     const currentPathname = usePathname();
 
-    // eslint-disable-next-line
-    const handleChange = (e: { target: { value: any; }; }) => {
+    // @ts-ignore
+    const handleChange = (e) => {
         const newLocale = e.target.value;
 
         const days = 30;
@@ -21,15 +21,11 @@ export default function LanguageChanger() {
         const expires = date.toUTCString();
         document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
-        // redirect to the new locale path
-        if (
-            currentLocale === i18nConfig.defaultLocale
-        ) {
+        if (currentLocale === i18nConfig.defaultLocale) {
             router.push("/" + newLocale + currentPathname);
-        } else {
-            router.push(
-                currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
-            );
+        }
+        else {
+            router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
         }
 
         router.refresh();
