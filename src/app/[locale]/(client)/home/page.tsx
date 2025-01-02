@@ -1,9 +1,9 @@
 "use client"
 
 import styles from "./page.module.css";
-import LanguageChanger from "@/components/language-switch";
 import {useEffect, useState} from "react";
 import {useTranslations} from "next-intl";
+import {Link} from "@/i18n/routing";
 
 export default function Home() {
     const t = useTranslations();
@@ -18,7 +18,9 @@ export default function Home() {
             <main className={styles.main}>
                 <h1>{t("lang")}</h1>
                 <p>{text}</p>
-                <LanguageChanger/>
+                <Link locale={"cs"} href={"/home"}>cz</Link>
+                <br/>
+                <Link locale={"en"} href={"/home"}>en</Link>
             </main>
         </div>
     );

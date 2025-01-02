@@ -1,4 +1,7 @@
 {
   "lang": "česky",
-  "title": "nadpis"
+  "title": "nadpis",
+  "pathnames": {
+    "home": "domu"
+  }
 }

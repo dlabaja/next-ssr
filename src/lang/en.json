@@ -1,4 +1,7 @@
 {
   "lang": "ingliš",
-  "title": "page title"
+  "title": "page title",
+  "pathnames": {
+    "home": "home"
+  }
 }
