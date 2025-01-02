@@ -8,7 +8,6 @@ import {useTranslations} from "next-intl";
 export default function Home() {
     const t = useTranslations();
     const [text, setText] = useState("")
-    console.log("sus")
 
     useEffect(() => {
         setText("textus")
