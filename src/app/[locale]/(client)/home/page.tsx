@@ -1,12 +1,12 @@
 "use client"
 
 import styles from "./page.module.css";
-import {useTranslation} from "react-i18next";
 import LanguageChanger from "@/components/language-switch";
 import {useEffect, useState} from "react";
+import {useTranslations} from "next-intl";
 
 export default function Home() {
-    const { t } = useTranslation();
+    const t = useTranslations();
     const [text, setText] = useState("")
     console.log("sus")
 

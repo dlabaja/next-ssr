@@ -7,21 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "install": "npm install"
+    "install-deps": "npm install"
   },
   "dependencies": {
-    "i18next": "^24.1.0",
-    "i18next-http-backend": "^3.0.1",
-    "i18next-intervalplural-postprocessor": "^3.0.0",
-    "i18next-resources-to-backend": "^1.2.1",
-    "intl-pluralrules": "^2.0.1",
     "ironbean": "^1.0.22",
     "ironbean-react": "^1.0.2",
     "next": "14.2.20",
     "next-i18n-router": "^5.5.1",
+    "next-intl": "^3.26.3",
     "react": "^18",
-    "react-dom": "^18",
-    "react-i18next": "^15.2.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
